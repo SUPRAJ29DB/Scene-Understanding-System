@@ -6,17 +6,14 @@ from src.scene.scene_graph import SceneGraphBuilder
 from src.risk.risk_analyzer import RiskAnalyzer
 
 
-# =========================================================
-# CONFIGURATION
-# =========================================================
 
 MODEL_PATH = (
-    r"C:\Users\Suprakash Ghosh\runs\detect\models"
+    r"C:\Users\Yourname\runs\detect\models"
     r"\yolov11\bdd100k_final-3\weights\best.pt"
 )
 
 VAL_DIR = Path(
-    r"C:\Users\Suprakash Ghosh\Desktop"
+    r"C:\Users\yourname\Desktop"
     r"\Scene Understanding System\dataset\images\val"
 )
 
@@ -30,9 +27,6 @@ CONFIDENCE = 0.60
 MAX_DETECTIONS = 80
 
 
-# =========================================================
-# GPU CHECK
-# =========================================================
 
 print("\n========================================")
 print("             GPU CHECK")
@@ -60,9 +54,6 @@ else:
 print("========================================")
 
 
-# =========================================================
-# CHECK VALIDATION DIRECTORY
-# =========================================================
 
 if not VAL_DIR.exists():
 
@@ -71,9 +62,6 @@ if not VAL_DIR.exists():
     )
 
 
-# =========================================================
-# FIND IMAGES
-# =========================================================
 
 image_files = sorted(
     list(VAL_DIR.glob("*.jpg")) +
@@ -116,9 +104,6 @@ print(
 print("========================================")
 
 
-# =========================================================
-# LOAD MODELS
-# =========================================================
 
 print("\nLoading YOLO11 model...")
 
@@ -131,16 +116,9 @@ scene_builder = SceneGraphBuilder()
 risk_analyzer = RiskAnalyzer()
 
 
-# =========================================================
-# STORE RESULTS
-# =========================================================
-
 results_summary = []
 
 
-# =========================================================
-# PROCESS EACH IMAGE
-# =========================================================
 
 for image_number, image_path in enumerate(
     image_files,
@@ -163,9 +141,6 @@ for image_number, image_path in enumerate(
 
     try:
 
-        # =================================================
-        # 1. YOLO11 DETECTION
-        # =================================================
 
         print("\n[1] YOLO11 detection...")
 
@@ -182,11 +157,7 @@ for image_number, image_path in enumerate(
             )
 
             continue
-
-
-        # =================================================
-        # 2. CONVERT YOLO RESULTS
-        # =================================================
+=
 
         detections = []
 
@@ -234,10 +205,6 @@ for image_number, image_path in enumerate(
         )
 
 
-        # =================================================
-        # 3. LIMIT DETECTIONS
-        # =================================================
-
         if len(detections) > MAX_DETECTIONS:
 
             print(
@@ -259,9 +226,6 @@ for image_number, image_path in enumerate(
         )
 
 
-        # =================================================
-        # 4. COUNT OBJECT CLASSES
-        # =================================================
 
         class_counts = {}
 
@@ -299,9 +263,6 @@ for image_number, image_path in enumerate(
             print("  None")
 
 
-        # =================================================
-        # 5. IMAGE DIMENSIONS
-        # =================================================
 
         image_width = (
             yolo_results[0].orig_shape[1]
@@ -318,9 +279,6 @@ for image_number, image_path in enumerate(
         )
 
 
-        # =================================================
-        # 6. BUILD SCENE GRAPH
-        # =================================================
 
         print(
             "\n[2] Building scene graph..."
@@ -358,9 +316,6 @@ for image_number, image_path in enumerate(
         )
 
 
-        # =================================================
-        # 7. RISK ANALYSIS
-        # =================================================
 
         print(
             "\n[3] Running risk analysis..."
@@ -405,10 +360,6 @@ for image_number, image_path in enumerate(
         )
 
 
-        # =================================================
-        # 8. STORE RESULT
-        # =================================================
-
         results_summary.append({
 
             "image": image_path.name,
@@ -452,9 +403,6 @@ for image_number, image_path in enumerate(
         )
 
 
-# =========================================================
-# FINAL BATCH SUMMARY
-# =========================================================
 
 print("\n\n")
 print("========================================")
@@ -501,9 +449,6 @@ else:
         )
 
 
-# =========================================================
-# STATISTICS
-# =========================================================
 
 if results_summary:
 
@@ -527,9 +472,7 @@ if results_summary:
     )
 
 
-    # -----------------------------------------------------
-    # Risk distribution
-    # -----------------------------------------------------
+    # ------------------------------------------------
 
     risk_distribution = {}
 
@@ -557,10 +500,6 @@ if results_summary:
             f"  {level:<8}: {count}"
         )
 
-
-    # -----------------------------------------------------
-    # Highest risk image
-    # -----------------------------------------------------
 
     highest_risk = max(
         results_summary,
