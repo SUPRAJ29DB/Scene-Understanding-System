@@ -1,0 +1,22 @@
+ROAD SCENE UNDERSTANDING REPORT
+=============================================
+
+1. VISUAL DESCRIPTION
+The vision-language model describes the scene as: a street with cars parked on the side of the road.
+
+2. DETECTED OBJECTS
+The system detected 10 objects in the road scene.
+Detected categories: 9 cars, 1 traffic sign.
+
+3. SPATIAL RELATIONSHIPS
+The scene graph contains 76 spatial relationships.
+12 object pairs are spatially near each other.
+2 object pairs have overlapping bounding boxes.
+Bounding-box overlap represents a possible spatial conflict and does not prove an actual collision.
+
+4. RISK ANALYSIS
+Overall risk level: LOW.
+Risk score: 28/100.
+
+5. OVERALL ASSESSMENT
+The scene contains minor spatial or traffic-density risk indicators.

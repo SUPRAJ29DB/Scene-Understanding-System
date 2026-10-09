@@ -1,0 +1,10 @@
+services:
+  road-scene-ai:
+    build: .
+    container_name: ai-road-scene
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./models:/app/models
+      - ./outputs:/app/outputs
+    restart: unless-stopped

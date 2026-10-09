@@ -1,0 +1,14 @@
+# Add Python dependencies here
+streamlit
+ultralytics
+torch
+torchvision
+transformers
+sentence-transformers
+opencv-python-headless
+numpy
+pandas
+Pillow
+networkx
+scikit-learn
+matplotlib

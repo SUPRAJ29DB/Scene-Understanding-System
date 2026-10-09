@@ -1,0 +1,180 @@
+/* styles placeholder */
+/* ============================================================
+   GLOBAL
+   ============================================================ */
+
+.main {
+    padding-top: 1rem;
+}
+
+.block-container {
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+    max-width: 1400px;
+}
+
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+
+.main-title {
+    text-align: center;
+    font-size: 42px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 17px;
+    color: #888888;
+    margin-bottom: 35px;
+}
+
+
+/* ============================================================
+   SECTION
+   ============================================================ */
+
+.section-title {
+    font-size: 25px;
+    font-weight: 700;
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+
+/* ============================================================
+   METRIC CARDS
+   ============================================================ */
+
+.metric-card {
+    border: 1px solid rgba(128, 128, 128, 0.25);
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    min-height: 115px;
+    background: rgba(128, 128, 128, 0.05);
+}
+
+.metric-label {
+    font-size: 14px;
+    color: #888888;
+    margin-bottom: 8px;
+}
+
+.metric-value {
+    font-size: 30px;
+    font-weight: 800;
+}
+
+
+/* ============================================================
+   RISK
+   ============================================================ */
+
+.risk-safe {
+    color: #00a651;
+}
+
+.risk-low {
+    color: #d4b000;
+}
+
+.risk-medium {
+    color: #ff8c00;
+}
+
+.risk-high {
+    color: #ff3333;
+}
+
+
+/* ============================================================
+   INFORMATION CARDS
+   ============================================================ */
+
+.info-card {
+    border: 1px solid rgba(128, 128, 128, 0.25);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 15px;
+}
+
+.info-card-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+
+/* ============================================================
+   PIPELINE
+   ============================================================ */
+
+.pipeline-card {
+    border: 1px solid rgba(128, 128, 128, 0.25);
+    border-radius: 12px;
+    padding: 15px;
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+
+.footer {
+    text-align: center;
+    color: #777777;
+    padding-top: 35px;
+    padding-bottom: 10px;
+    font-size: 13px;
+}
+
+
+/* ============================================================
+   UPLOAD AREA
+   ============================================================ */
+
+.upload-description {
+    text-align: center;
+    color: #888888;
+    margin-bottom: 10px;
+}
+
+
+/* ============================================================
+   REPORT
+   ============================================================ */
+
+.report-box {
+    border: 1px solid rgba(128, 128, 128, 0.25);
+    border-radius: 15px;
+    padding: 20px;
+}
+
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 768px) {
+
+    .main-title {
+        font-size: 30px;
+    }
+
+    .subtitle {
+        font-size: 14px;
+    }
+
+    .section-title {
+        font-size: 21px;
+    }
+
+}
